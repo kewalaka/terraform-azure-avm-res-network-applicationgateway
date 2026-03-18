@@ -9,18 +9,16 @@ variable "name" {
   description = "The name of the this resource."
 
   validation {
-    condition     = can(regex("TODO", var.name))
-    error_message = "The name must be TODO." # TODO remove the example below once complete:
-    #condition     = can(regex("^[a-z0-9]{5,50}$", var.name))
-    #error_message = "The name must be between 5 and 50 characters long and can only contain lowercase letters and numbers."
+    condition     = can(regex("^[a-zA-Z0-9][a-zA-Z0-9\\-_.]{0,78}[a-zA-Z0-9_]$", var.name))
+    error_message = "The name must be 2-80 characters, start and end with a letter or number, and contain only letters, numbers, hyphens, underscores, and periods."
   }
 }
 
 # This is required for most resource modules
-variable "resource_group_name" {
-  type        = string
-  description = "The resource group where the resources will be deployed."
-}
+# variable "resource_group_name" {
+#   type        = string
+#   description = "The resource group where the resources will be deployed."
+# }
 
 # required AVM interfaces
 # remove only if not supported by the resource
