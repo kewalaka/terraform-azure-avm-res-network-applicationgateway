@@ -1,3 +1,3 @@
-# terraform-azurerm-avm-template
+# terraform-azure-avm-res-network-applicationgateway
 
-This is a template repo for Terraform Azure Verified Modules.
+AVM-like Terraform module for Azure Application Gateway using the AzAPI provider.
